@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style media="screen">
+    *{
+      margin:0px;
+      padding:0px;
+    }
+    #app>#d1{
+      background: #81C346;
+      font-size: 18px;
+      height:100px;
+    }
+  #app p{position:relative;}
+ #app p img{
+   width:35px;height35px;
+   position: absolute;
+   left:0;
+   top:auto;
+   margin-top:30px;
+ }
+ #app p input{
+   width:100%;height:30px;
+   border-left: 2px solid #ddd;
+   margin-left:50px;
+   margin-top:30px;
+   outline: none;
+ }
+ #app .msg {width:68%;height:30px;}
+ #app .msg1 {
+   color:white;
+   width:20%;height:32px;
+   background-color:#33CC66;
+   border-radius: 5px;
+ }
+ #radio{text-align: center;margin:10px;}
+    </style>
+  </head>
+  <body>
+     <div id="app">
+       <mt-header id="d1" title="注册">
+           <mt-button icon="back" slot="left"></mt-button>
+       </mt-header>
+
+    <p>
+        <img src="Images/people.png" alt="">
+        <input type="text" v-model="tel" name="txtName"
+        maxlength="10" placeholder="请输入号码">
+     </p>
+     <p >
+        <img src="Images/message.png" alt="">
+        <input class="msg" type="text"v-model="message" name="txtPwd"
+         placeholder="短信校验码" >
+        <input class="msg1" type="button" v-model="message1"></input>
+     </p>
+     <p>
+        <img src="Images/lock.png" alt="">
+        <input type="password" v-model="pwd" name="Pwd" maxlength="20"
+         placeholder="请输入密码" >
+     </p>
+     <p>
+        <img src="Images/lock.png" alt="">
+        <input type="password" v-model="pwd1" name="ConfirmPwd" maxlength="20"placeholder="请再次输入密码">
+     </p>
+      <p><input type="button" v-model="zhuce" value=""></p>
+
+   <div id="radio">
+     <input type="radio" id="chk" value=" " v-model="picked">
+      <label for="chk">我已阅读并接受版权声明和隐私保护条款</label>
+   </div>
+
+ </div>
+  </body>
+  <!-- 先引入 Vue -->
+  <script src="js/vue.js"></script>
+  <!-- 引入组件库 -->
+  <script src="js/index.js"></script>
+  <script>
+     new Vue({
+       el:'#app',
+       data:{
+         tel:'123456',
+         message:'',
+         message1:'获取短信验证码',
+         pwd:'',
+         pwd1:'',
+         zhuce:'立即注册' ,
+         picked:''
+       }
+
+     })
+
+  </script>
+</html>

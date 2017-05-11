@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>消息中心</title>
+    <link rel="stylesheet" href="css/style.css">
+  <style>
+          * {
+            margin: 0;
+            padding: 0;
+          }
+
+        #app>#d1{
+          background: #81C346;
+          font-size: 18px;
+        }
+        #d1 img{
+          width:12%;
+          height:12%;
+        }
+        body{
+          background: #D9D9D9;
+        }
+     #search{
+       border-radius:20px;
+       width:80%;height:30px;
+       border:none;
+       outline: none;
+       margin:10px;
+       padding-left:10px;
+       background: #E1E8DB;
+     }
+      #tab,#tab-1{
+        margin:10px 0;
+      }
+      #items{margin:4px 0;}
+      #items mt-cell img{
+        border-radius:10px;
+      }
+  </style>
+  </head>
+  <body>
+    <div id="app">
+
+     <mt-header id="d1" title="消息中心">
+         <img src="Images/setup_fill.png" slot="right" />
+     </mt-header>
+
+    <input id="search" type="text" v-model="msg" placeholder="搜索">
+    <mt-cell id="tab" slot="icon" title="系统消息" >
+     <img src="Images/prompt.png" slot="icon" width="28" height="28">
+    </mt-cell>
+
+    <mt-cell  title="Tansuozhe" label="hello nice to meet you">
+            <p>12:40</p>
+            <img slot="icon"src="Images/1.jpg" width="70" height="70" >
+      </mt-cell>
+
+      <mt-cell  title="Tansuozhe" label="hello nice to meet you">
+          <span>10:40</span>
+          <img src="Images/1.jpg" slot="icon" width="70" height="70">
+      </mt-cell>
+      <mt-cell  title="Tansuozhe" label="hello nice to meet you">
+        <span>2017-5-4</span>
+        <img src="Images/1.jpg" slot="icon" width="70" height="70">
+      </mt-cell>
+      <mt-cell  title="Tansuozhe" label="hello nice to meet you">
+        <span>2017-5-3</span>
+        <img src="Images/1.jpg" slot="icon" width="70" height="70">
+      </mt-cell>
+      <mt-cell  title="Tansuozhe" label="hello nice to meet you">
+        <span>2017-5-2</span>
+        <img src="Images/1.jpg" slot="icon" width="70" height="70">
+       </mt-cell>
+
+  <mt-tabbar  id="tab" v-model="selected">
+  <mt-tab-item id="首页">
+    <img slot="icon" src="Images/homepage_fill.png">
+    首页
+  </mt-tab-item>
+  <mt-tab-item id="发现">
+    <img slot="icon" src="Images/search_fill.png">
+    发现
+  </mt-tab-item>
+  <mt-tab-item >
+    <img  src="Images/addition.png" width="50" height="50" >
+  </mt-tab-item>
+  <mt-tab-item id="信息">
+    <img slot="icon" src="Images/message_fill.png">
+    信息
+  </mt-tab-item>
+  <mt-tab-item id="我的">
+    <img slot="icon" src="Images/people_fill.png">
+    我的
+  </mt-tab-item>
+</mt-tabbar>
+</div>
+
+  </body>
+  <!-- 先引入 Vue -->
+  <script src="js/vue.js"></script>
+  <!-- 引入组件库 -->
+  <script src="js/index.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        msg:'',
+        active:'tab-2',
+        selected: '首页',
+
+      }
+    })
+  </script>
+</html>

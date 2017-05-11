@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>个人资料</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style media="screen">
+    *{
+      margin:0px;
+      padding:0px;
+    }
+    #app>#d1{
+      background: #81C346;
+      font-size: 18px;
+      height:100px;
+    }
+    #app #head{
+     height:100px;
+    }
+    #head img{
+      border-radius: 50px;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <mt-header id="d1" title="个人资料">
+        <mt-button icon="back" slot="left"></mt-button>
+      </mt-header>
+
+      <mt-cell id="head" title="修改头像" is-link>
+         <img src="Images/1.jpg" width="80" height="80">
+      </mt-cell>
+
+      <mt-cell title="账号" is-link>
+      <span style="color: green">456123</span>
+    </mt-cell>
+    <mt-cell title="手机" is-link>
+      <span style="color: green">1234567890</span>
+    </mt-cell>
+    <mt-cell title="昵称" is-link>
+      <span style="color: green">Tansuozhe</span>
+    </mt-cell>
+    <mt-cell title="性别" is-link>
+      <span style="color: green">女</span>
+    </mt-cell>
+    <mt-cell title="个性签名" is-link>
+      <span style="color: green">探索真理的脚步</span>
+    </mt-cell>
+
+    <div class="btn">
+      <mt-button  size="large">拍照</mt-button><br/>
+      <mt-button  size="large">从手机相册选择</mt-button><br/>
+      <mt-button  size="large">取消</mt-button>
+    </div>
+  </div>
+
+
+  </body>
+  <!-- 先引入 Vue -->
+  <script src="js/vue.js"></script>
+  <!-- 引入组件库 -->
+  <script src="js/index.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data:{
+        value:'123456'
+      }
+    })
+  </script>
+</html>

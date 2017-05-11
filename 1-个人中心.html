@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="css/style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+  #app>#header{
+    background: #81C346;
+    font-size: 18px;
+    height:150px;
+    color:white;
+    padding-top:10px;
+  }
+  #first{text-align: center;}
+  #first img{
+      width:35px;
+      height:35px;
+      float:right;
+    }
+  #second>span,p{
+    padding: 5px;
+  }
+    #second img{
+      float:left;
+      width:100px;
+      height:100px;
+      border-radius: 50px;
+      margin-left: 30px;
+    }
+
+  </style>
+  </head>
+  <body>
+    <div id="app">
+
+     <!-- <mt-header id="d1" title="个人中心">
+      <img src="Images/setup_fill.png" slot="right" />
+        <img src="Images/1.jpg" slot="left"/>
+     </mt-header> -->
+      <div id="header">
+         <p id="first">个人中心
+         <img src="Images/setup_fill.png"/>
+         </p>
+         <p id="second">
+           <img src="Images/1.jpg" />
+           <span>Tansuozhe</span>
+           <p>个性签名：探索真理的脚步</p>
+        </p>
+
+      </div>
+
+      <mt-navbar  v-model="active" >
+        <mt-tab-item id="1">我的相册</mt-tab-item>
+        <mt-tab-item id="2">我的直播</mt-tab-item>
+        <mt-tab-item id="3">我的足迹</mt-tab-item>
+      </mt-navbar>
+
+     <mt-tab-container v-model="active">
+       <mt-tab-container-item id="1">
+         <mt-cell v-for="item in items1" :title="item.text" is-link/>
+       </mt-tab-container-item>
+       <mt-tab-container-item id="2">
+         <mt-cell v-for="item in items2" :title="item.text" is-link/>
+       </mt-tab-container-item>
+       <mt-tab-container-item id="3">
+         <mt-cell v-for="item in items3" :title="item.text"is-link />
+       </mt-tab-container-item>
+     </mt-tab-container>
+
+  <mt-tabbar  id="tab" v-model="selected">
+  <mt-tab-item id="首页">
+    <img slot="icon"width="30"height="30" src="Images/homepage_fill.png " >
+    首页
+  </mt-tab-item>
+  <mt-tab-item id="发现">
+    <img slot="icon" src="Images/search_fill.png">
+    发现
+  </mt-tab-item>
+  <mt-tab-item id="">
+    <img  src="Images/addition.png" width="50" height="50" >
+  </mt-tab-item>
+  <mt-tab-item id="信息">
+    <img slot="icon" src="Images/message_fill.png">
+    信息
+  </mt-tab-item>
+  <mt-tab-item id="我的">
+    <img slot="icon" src="Images/people_fill.png">
+    我的
+  </mt-tab-item>
+</mt-tabbar>
+</div>
+
+  </body>
+  <!-- 先引入 Vue -->
+  <script src="js/vue.js"></script>
+  <!-- 引入组件库 -->
+  <script src="js/index.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        active:'1',
+        items1:[
+           { text: '我的赞' },
+           { text: '我的关注' },
+           { text: '我的收藏' },
+           { text: '我的钱包' },
+           { text: '交易记录' },
+           { text: '帮助与反馈' }
+        ],
+        items2:[
+           { text: '我的赞' },
+           { text: '我的关注' },
+           { text: '我的收藏' }
+        ],
+        items3:[
+           { text: '我的钱包' },
+           { text: '交易记录' },
+           { text: '帮助与反馈' }
+        ],
+        selected: '首页',
+      }
+    })
+  </script>
+</html>
